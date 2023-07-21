@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPubSub.Protobuf.Client", "WebPubSub.Protobuf\WebPubSub.Protobuf.Client.csproj", "{6249DD61-720B-45ED-8494-6168271EF415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPubSub.Protobuf.Client.Sample", "WebPubSub.Protobuf\WebPubSub.Protobuf.Client.Sample.csproj", "{6249DD61-720B-45ED-8494-6168271EF415}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPubSub.Protobuf", "WebPubSub.Protobuf.Protocols\WebPubSub.Protobuf.csproj", "{C3583B1F-7F48-46BA-BEEA-48A197797B20}"
 EndProject
