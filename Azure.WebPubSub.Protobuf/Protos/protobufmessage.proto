@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Azure.WebPubSub.Client";
+
+package azure.webpubsub;
+
+message ProtobufMessage {
+    string from = 1;
+
+    oneof message {
+            TextMessage text_message = 2;
+            BinaryMessage binary_message = 3;                
+        }  
+}
+
+message BinaryMessage {
+        bytes data = 1;
+    }
+
+    message TextMessage {
+        string text = 1;
+    }
