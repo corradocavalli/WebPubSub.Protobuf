@@ -69,8 +69,10 @@ namespace Azure.WebPubSub.Protobuf.Protocols
                     switch (sendEventMessage.DataType)
                     {
                         case WebPubSubDataType.Text:
-                        case WebPubSubDataType.Json:
                             upstreamMessage.EventMessage.Data.TextData = sendEventMessage.Data.ToString();
+                            break;
+                        case WebPubSubDataType.Json:
+                            upstreamMessage.EventMessage.Data.JsonData = sendEventMessage.Data.ToString();
                             break;
 
                         case WebPubSubDataType.Binary:
