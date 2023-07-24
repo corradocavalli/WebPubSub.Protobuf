@@ -1,10 +1,10 @@
-﻿using Messaging.WebPubSub.Client.Protobuf;
-using Azure.Messaging.WebPubSub.Clients;
+﻿using Azure.Messaging.WebPubSub.Clients;
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
+using Messaging.WebPubSub.Client.Protobuf;
 using System.Buffers;
 
-namespace Azure.WebPubSub.Protobuf.Protocols
+namespace WebPubSub.Client.Protobuf
 {
     internal class WebPubSubProtobufProtocolBase
     {
@@ -40,12 +40,14 @@ namespace Azure.WebPubSub.Protobuf.Protocols
 
                     switch (sendToGroupMessage.DataType)
                     {
-                        case WebPubSubDataType.Text:                        
+                        case WebPubSubDataType.Text:
                             upstreamMessage.SendToGroupMessage.Data.TextData = sendToGroupMessage.Data.ToString();
                             break;
+
                         case WebPubSubDataType.Json:
                             upstreamMessage.SendToGroupMessage.Data.JsonData = sendToGroupMessage.Data.ToString();
                             break;
+
                         case WebPubSubDataType.Binary:
                             upstreamMessage.SendToGroupMessage.Data.BinaryData = ByteString.FromStream(sendToGroupMessage.Data.ToStream());
                             break;
@@ -71,6 +73,7 @@ namespace Azure.WebPubSub.Protobuf.Protocols
                         case WebPubSubDataType.Text:
                             upstreamMessage.EventMessage.Data.TextData = sendEventMessage.Data.ToString();
                             break;
+
                         case WebPubSubDataType.Json:
                             upstreamMessage.EventMessage.Data.JsonData = sendEventMessage.Data.ToString();
                             break;

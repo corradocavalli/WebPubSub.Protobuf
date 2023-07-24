@@ -1,10 +1,9 @@
-﻿using Azure.Messaging.WebPubSub.Client.Protobuf;
-using Azure.Messaging.WebPubSub.Clients;
+﻿using Azure.Messaging.WebPubSub.Clients;
 using Azure.WebPubSub.Client;
 using Google.Protobuf;
-using Microsoft.Extensions.Azure;
 using PubSubCore;
 using System.Text;
+using WebPubSub.Client.Protobuf;
 
 namespace Azure.WebPubSub.Protobuf
 {

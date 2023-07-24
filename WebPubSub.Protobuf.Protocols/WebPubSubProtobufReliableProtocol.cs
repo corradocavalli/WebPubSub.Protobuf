@@ -1,13 +1,11 @@
 ﻿using Azure.Messaging.WebPubSub.Clients;
-using Azure.WebPubSub.Protobuf.Protocols;
-using Google.Protobuf;
 using System.Buffers;
 
-namespace Azure.Messaging.WebPubSub.Client.Protobuf
+namespace WebPubSub.Client.Protobuf
 {
     public class WebPubSubProtobufReliableProtocol : WebPubSubProtocol
-    {        
-        private readonly WebPubSubProtobufProtocolBase _processor = new WebPubSubProtobufProtocolBase(); 
+    {
+        private readonly WebPubSubProtobufProtocolBase _processor = new WebPubSubProtobufProtocolBase();
 
         public override string Name => "protobuf.reliable.webpubsub.azure.v1";
 
@@ -17,7 +15,7 @@ namespace Azure.Messaging.WebPubSub.Client.Protobuf
 
         public override ReadOnlyMemory<byte> GetMessageBytes(WebPubSubMessage message)
         {
-            return _processor.GetMessageBytes(message); 
+            return _processor.GetMessageBytes(message);
         }
 
         public override WebPubSubMessage ParseMessage(ReadOnlySequence<byte> input)

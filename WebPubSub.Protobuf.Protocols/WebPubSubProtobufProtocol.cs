@@ -1,10 +1,7 @@
 ﻿using Azure.Messaging.WebPubSub.Clients;
-using Azure.WebPubSub.Protobuf.Protocols;
-using Google.Protobuf;
-using Google.Protobuf.WellKnownTypes;
 using System.Buffers;
 
-namespace Azure.Messaging.WebPubSub.Client.Protobuf
+namespace WebPubSub.Client.Protobuf
 {
     public class WebPubSubProtobufProtocol : WebPubSubProtocol
     {
