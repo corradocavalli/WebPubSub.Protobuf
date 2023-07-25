@@ -16,18 +16,18 @@ dotnet add package WebpubSub.Protobuf --version 1.0.0
 
 ### Prerequisites
 
-- An [Azure subscription](https://azure.microsoft.com/free/dotnet/).
+- An [Azure subscription](https://azure.microsoft.com/free/dotnet/)
 - An existing Web PubSub instance. [Create Web PubSub instance](https://learn.microsoft.com/azure/azure-web-pubsub/howto-develop-create-instance)
 
 ## Select the protobuf subprotocol
 
-Import the `WebPubSub.Client.Protobuf` namespace
+Import the `WebPubSub.Client.Protobuf` namespace.
 ```C#
 using WebPubSub.Client.Protobuf
 ```
 
 
-Indicate the subprotocol used by the client choosing from `protobuf.webpubsub.azure.v1` or `protobuf.reliable.webpubsub.azure.v1`.
+Select the subprotocol used by the client from `protobuf.webpubsub.azure.v1` or `protobuf.reliable.webpubsub.azure.v1`.
 
 ```C#
 var client = new WebPubSubClient(new Uri("<client-access-uri>"), new WebPubSubClientOptions
