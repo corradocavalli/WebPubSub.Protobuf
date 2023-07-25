@@ -6,37 +6,39 @@ You can use this library to add protobuf subprotocols including `protobuf.reliab
 
 ## Getting started
 
+### Install the package
+Install the client library from [NuGet](https://www.nuget.org/packages/WebPubSub.Protobuf):
 
-Clone this repository, add the Azure.WebPubSub protocol project to your solution and reference it from your project.
+```dotnetcli
+dotnet add package WebpubSub.Protobuf --version 1.0.0
+```
+
 
 ### Prerequisites
 
 - An [Azure subscription](https://azure.microsoft.com/free/dotnet/).
 - An existing Web PubSub instance. [Create Web PubSub instance](https://learn.microsoft.com/azure/azure-web-pubsub/howto-develop-create-instance)
 
-## Examples
+## Select the protobuf subprotocol
 
-### Specify protobuf subprotocol
+Import the `WebPubSub.Client.Protobuf` namespace
+```C#
+using WebPubSub.Client.Protobuf
+```
 
-You can specify the subprotocol to be used by the client. You can choose to use `protobuf.reliable.webpubsub.azure.v1` or `protobuf.webpubsub.azure.v1` after referencing the library.
 
-```C# Snippet:WebPubSubClient_JsonReliableProtocol
+Indicate the subprotocol used by the client choosing from `protobuf.webpubsub.azure.v1` or `protobuf.reliable.webpubsub.azure.v1`.
+
+```C#
 var client = new WebPubSubClient(new Uri("<client-access-uri>"), new WebPubSubClientOptions
 {
-    Protocol = new WebPubSubProtobufReliableProtocol()
+    Protocol = new WebPubSubProtobufReliableProtocol() // or new WebPubSubProtobufProtocol()
 });
 ```
 
-```C# Snippet:WebPubSubClient_JsonProtocol
-var client = new WebPubSubClient(new Uri("<client-access-uri>"), new WebPubSubClientOptions
-{
-    Protocol = new WebPubSubProtobufProtocol()
-});
-```
-
-### Included project sample
+## Example
 The repo includes a sample that shows how to use the protobuf protocol with supported data types to send and receive simple messages.
-#### How to run the sample
+### How to run the sample
 1. Set a valid PubSub connection string.
 
 ```C#
@@ -52,4 +54,3 @@ The repo includes a sample that shows how to use the protobuf protocol with supp
  private const bool Reliable = true;
 ```
 Enter some text in the console and press enter to send the message, it will be received by the client and printed in the console.
-
