@@ -11,7 +11,7 @@ This library adds the protobuf subprotocols `protobuf.reliable.webpubsub.azure.v
 
 - Install the Azure.Messaging.WebPubSub.Client package from [NuGet](https://www.nuget.org/): 
 ```dotnetcli
-dotnet add package Azure.Messaging.WebPubSub.Client
+dotnet add package Azure.Messaging.WebPubSub.Client --prerelease
 ```
 - Install this package from [NuGet](https://www.nuget.org/): 
 ```dotnetcli
